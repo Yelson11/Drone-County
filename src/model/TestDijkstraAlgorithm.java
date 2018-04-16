@@ -21,7 +21,7 @@ public class TestDijkstraAlgorithm {
 
     
     public void testExcute() {
-        nodes = new ArrayList<Vertex>();
+    	nodes = new ArrayList<Vertex>();
         edges = new ArrayList<Edge>();
                 
         Vertex N0 = new Vertex("0");
@@ -40,30 +40,31 @@ public class TestDijkstraAlgorithm {
         nodes.add(N5);
         nodes.add(N6);
 
-        addLane("Edge_0", "0", "2", 1);
-        addLane("Edge_1", "0", "3", 2);
-        addLane("Edge_2", "1", "5", 3);
-        addLane("Edge_3", "1", "2", 2);
-        addLane("Edge_4", "2", "1", 2);
-        addLane("Edge_5", "2", "4", 3);
-        addLane("Edge_6", "2", "3", 1);
-        addLane("Edge_7", "2", "0", 1);
-        addLane("Edge_8", "3", "2", 1);
-        addLane("Edge_9", "3", "6", 1);
-        addLane("Edge_10", "3", "0", 2);
-        addLane("Edge_11", "4", "5", 2);
-        addLane("Edge_12", "4", "2", 3);
-        addLane("Edge_13", "5", "6", 1);
-        addLane("Edge_14", "5", "4", 2);
-        addLane("Edge_15", "5", "1", 3);
-        addLane("Edge_16", "6", "5", 1);
-        addLane("Edge_17", "6", "3", 1);
+        Graph graph = new Graph(nodes, edges);
+        graph.addLane("0", "2", 1);
+        graph.addLane("0", "3", 2);
+        graph.addLane("1", "5", 3);
+        graph.addLane("1", "2", 2);
+        graph.addLane("2", "1", 2);
+        graph.addLane("2", "4", 3);
+        graph.addLane("2", "3", 1);
+        graph.addLane("2", "0", 1);
+        graph.addLane("3", "2", 1);
+        graph.addLane("3", "6", 1);
+        graph.addLane("3", "0", 2);
+        graph.addLane("4", "5", 2);
+        graph.addLane("4", "2", 3);
+        graph.addLane("5", "6", 1);
+        graph.addLane("5", "4", 2);
+        graph.addLane("5", "1", 3);
+        graph.addLane("6", "5", 1);
+        graph.addLane("6", "3", 1);
 
         //Lets check from location Loc_1 to Loc_10
-        Graph graph = new Graph(nodes, edges);
+        
         DijkstraAlgorithm dijkstra = new DijkstraAlgorithm(graph);
-        dijkstra.execute(getVertexById("2", nodes));
-        LinkedList<Vertex> path = dijkstra.getPath(getVertexById("6", nodes));
+        dijkstra.execute(graph.getVertexById("0", nodes));
+        LinkedList<Vertex> path = dijkstra.getPath(graph.getVertexById("5", nodes));
         assertNotNull(path);
         assertTrue(path.size() > 0);
 
@@ -72,23 +73,6 @@ public class TestDijkstraAlgorithm {
         }
                 
 
-    }
-
-    private Vertex getVertexById(String pId, List<Vertex> pVertices)
-    {
-        for(Vertex vertex : pVertices)
-        {
-            if(vertex.getId().equals(pId))
-            {
-                return vertex;
-            }
-        }
-        return null;
-    }
-    
-    private void addLane(String laneId, String source, String destination, int duration) {
-        Edge lane = new Edge(laneId,getVertexById(source, nodes), getVertexById(destination, nodes), duration );
-        edges.add(lane);
     }
     
     public static void main(String[] args)
