@@ -59,12 +59,11 @@ public class TestDijkstraAlgorithm {
         addLane("Edge_16", "6", "5", 1);
         addLane("Edge_17", "6", "3", 1);
 
-        // Lets check from location Loc_1 to Loc_10
+        //Lets check from location Loc_1 to Loc_10
         Graph graph = new Graph(nodes, edges);
         DijkstraAlgorithm dijkstra = new DijkstraAlgorithm(graph);
-        dijkstra.execute(getVertexById("0", nodes));
-        LinkedList<Vertex> path = dijkstra.getPath(getVertexById("5", nodes));
-
+        dijkstra.execute(getVertexById("2", nodes));
+        LinkedList<Vertex> path = dijkstra.getPath(getVertexById("6", nodes));
         assertNotNull(path);
         assertTrue(path.size() > 0);
 
