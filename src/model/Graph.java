@@ -22,4 +22,21 @@ public class Graph {
     public List<Edge> getEdges() {
         return edges;
     }
+    
+    public Vertex getVertexById(String pId, List<Vertex> pVertices)
+    {
+        for(Vertex vertex : pVertices)
+        {
+            if(vertex.getId().equals(pId))
+            {
+                return vertex;
+            }
+        }
+        return null;
+    }
+    
+    public void addLane(String source, String destination, int duration) {
+        Edge lane = new Edge(getVertexById(source, this.vertexes), getVertexById(destination, this.vertexes), duration );
+        edges.add(lane);
+    }
 }
