@@ -2,6 +2,14 @@
 <classpath>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 	<classpathentry kind="src" path="src"/>
+<<<<<<< HEAD:Bingo/.classpath
 	<classpathentry kind="lib" path="D:/Users/Yelson/Downloads/junit-4.9.jar"/>
+=======
+<<<<<<< HEAD
+	<classpathentry kind="lib" path="D:/Users/Yelson/Downloads/junit-4.9.jar"/>
+=======
+	<classpathentry kind="lib" path="C:/Users/Administrator/Downloads/junit-4.9.jar"/>
+>>>>>>> master
+>>>>>>> 52b7ccf57bcf0be8e427614b644bea7106cc543f:.classpath
 	<classpathentry kind="output" path="bin"/>
 </classpath>
