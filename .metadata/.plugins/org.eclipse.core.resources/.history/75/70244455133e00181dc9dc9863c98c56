@@ -1,0 +1,9 @@
+package model;
+
+public class Station {
+
+<<<<<<< HEAD:.metadata/.plugins/org.eclipse.core.resources/.history/75/70244455133e00181dc9dc9863c98c56
+=======
+	private int nombre;
+>>>>>>> 52b7ccf57bcf0be8e427614b644bea7106cc543f:src/model/Station.java
+}
